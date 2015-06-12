@@ -463,14 +463,15 @@ function prepareAppDOM() {
  * @param {!Object.<!string, !number>} volumes A map of hangoutId > mic volume,
  *     where volume is in the range [0, 5].
  */
- 
+
  /// Seems like this is where we can start playing around...
 function onVolumeLevelsChanged(volumes) {
+
+  console.log(participants, volumes);
+
   if (!participants_ || !avatarMap_) {
     return;
   }
-
-  console.log(participants, volumes);
 
   for (var i = 0, iLen = participants_.length; i < iLen; ++i) {
 
