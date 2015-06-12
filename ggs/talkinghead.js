@@ -469,7 +469,10 @@ function prepareAppDOM() {
 function onVolumeLevelsChanged(volumes) {
 
   console.log(volumes);
-  console.log(participants_);
+
+  for each (person in participants_) {
+    console.log(person.displayName);
+  }
 
   if (!participants_ || !avatarMap_) {
     return;
