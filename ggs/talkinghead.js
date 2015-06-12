@@ -492,12 +492,7 @@ function onVolumeLevelsChanged(volumes) {
   }
 }
 
- /// Seems like this is where we can start playing around...
-function onVolumeLevelsChanged(volumes) {
 
-  console.log("JH-----------------------" + volumes);
-
-}
 
 /**
  * Initialize the DOM and app data.
