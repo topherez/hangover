@@ -17,7 +17,7 @@
   	              ? document.referrer
   	              : document.location;
   	  
-  	   var currLocation = url.search,
+  	   var currLocation = window.parent.location.search,
   	       parArr = currLocation.split("?")[1].split("&");
   	   
   	   for(var i = 0; i < parArr.length; i++){
