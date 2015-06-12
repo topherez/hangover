@@ -43,6 +43,8 @@
   	
 	var my_awesome_script = document.createElement('script');
   	
+  	console.log(paramCheck);
+  	
   	if(paramCheck){
   		console.log('<!> Using Local JS');
 	  	my_awesome_script.setAttribute('src', '//'+ scriptLocal);
