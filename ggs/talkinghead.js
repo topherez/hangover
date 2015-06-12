@@ -68,7 +68,7 @@ var removeValue = null;
 
 function showParticipants() {
 
-  // var participantList = gapi.hangout.getParticipants();
+  var participantList = gapi.hangout.getParticipants();
 
   // for (var index in participantList) {
 
