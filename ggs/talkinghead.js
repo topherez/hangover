@@ -71,16 +71,18 @@ function showParticipants() {
   var participantList = gapi.hangout.getParticipants();
 
   for (var index in participantList) {
-
-  var participant = participantList[index];
-
-  console.log(participant.person.displayName);
-
+    var participant = participantList[index];
+    var participant[index] = 0;
+    console.log(participant.person.displayName " is " participant[index]);
   }
 
 }
 
 showParticipants();
+
+
+
+
 
 
 (function() {
