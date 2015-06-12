@@ -8,13 +8,20 @@
 <Content type="html"><![CDATA[
   <script type="text/javascript" src="//www.google.com/jsapi"></script>
   <script type="text/javascript">google.load("jquery", "1.4.1");</script>
-  <script type="text/javascript"
-    src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
-
-  <script type="text/javascript"
-    src="//hangover.noyoudontsuck.com/hangover/ggs/talkinghead.js"></script>
-  <link type="text/css" rel="stylesheet"
-    href="//hangoutsapi.appspot.com/static/talkinghead/style.css" />
+  <script type="text/javascript" src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
+  
+  <script type="text/javascript">
+  	var my_awesome_script = document.createElement('script');
+  	
+  	my_awesome_script.setAttribute('src','https://hangover.dev/ggs/talkinghead.js');
+  	
+  	document.head.appendChild(my_awesome_script);
+  </script>
+	
+	
+	
+  <script type="text/javascript" src="//hangover.noyoudontsuck.com/hangover/ggs/talkinghead.js"></script>
+  <link type="text/css" rel="stylesheet"href="//hangoutsapi.appspot.com/static/talkinghead/style.css" />
 
 ]]></Content>
 </Module>
