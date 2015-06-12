@@ -470,9 +470,7 @@ function onVolumeLevelsChanged(volumes) {
 
   console.log(volumes);
 
-  for each (person in participants_) {
-    console.log(person.displayName);
-  }
+  console.log("PARTAKING--------", getParticipants());
 
   if (!participants_ || !avatarMap_) {
     return;
