@@ -469,7 +469,7 @@ function onVolumeLevelsChanged(volumes) {
 
   console.log(volumes);
 
-  console.log("JH" + volumes);
+  console.log("JH-------------", volumes);
 
   if (!participants_ || !avatarMap_) {
     return;
