@@ -76,6 +76,7 @@ function showParticipants() {
 
     conole.log("THIS IS IT YEAHHHHHHHHHHHH", participant.person.displayName);
 
+  }
 }
 
 showParticipants();
