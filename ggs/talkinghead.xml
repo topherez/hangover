@@ -18,7 +18,7 @@
   	   
   	   for(var i = 0; i < parArr.length; i++){
   	        parr = parArr[i].split("=");
-  	        console.log(parr, parameter);
+  	        console.log(currLocation, parr, parameter);
   	        if(parr[0] == parameter){
   	            return (decode) ? decodeURIComponent(parr[1]) : parr[1];
   	            returnBool = true;
