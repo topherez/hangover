@@ -465,10 +465,17 @@ function prepareAppDOM() {
  *     where volume is in the range [0, 5].
  */
 
+
+////////////// Get all participants and create a var for each one
+
  /// Seems like this is where we can start playing around...
 function onVolumeLevelsChanged(volumes) {
 
-  console.log(volumes);
+  //console.log(volumes);
+
+////////////// For each participant, if volume level is > 0, ++1 to their var
+////////////// Log the count for each participant
+
 
   if (!participants_ || !avatarMap_) {
     return;
