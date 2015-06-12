@@ -13,7 +13,11 @@
   <script type="text/javascript">
   	function checkUrlParameters(parameter){
   	  
-  	   var currLocation = window.location.search,
+  	  var url = (window.location != window.parent.location)
+  	              ? document.referrer
+  	              : document.location;
+  	  
+  	   var currLocation = url.search,
   	       parArr = currLocation.split("?")[1].split("&");
   	   
   	   for(var i = 0; i < parArr.length; i++){
