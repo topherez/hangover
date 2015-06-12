@@ -66,6 +66,20 @@ var saveValue = null;
  */
 var removeValue = null;
 
+function showParticipants() {
+
+  var participantList = gapi.hangout.getParticipants();
+
+  for (var index in participantList) {
+
+    var participant = participantList[index];
+
+    conole.log("THIS IS IT YEAHHHHHHHHHHHH", participant.person.displayName);
+
+}
+
+showParticipants();
+
 
 (function() {
   /**
@@ -467,6 +481,8 @@ function prepareAppDOM() {
 
 
 ////////////// Get all participants and create a var for each one
+
+
 
  /// Seems like this is where we can start playing around...
 function onVolumeLevelsChanged(volumes) {
