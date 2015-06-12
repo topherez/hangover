@@ -467,7 +467,8 @@ function prepareAppDOM() {
  /// Seems like this is where we can start playing around...
 function onVolumeLevelsChanged(volumes) {
 
-  console.log(participants, volumes);
+  console.log(volumes);
+
 
   if (!participants_ || !avatarMap_) {
     return;
