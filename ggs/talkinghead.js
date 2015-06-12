@@ -470,8 +470,6 @@ function onVolumeLevelsChanged(volumes) {
 
   console.log(volumes);
 
-  console.log("PARTAKING--------", getParticipants());
-
   if (!participants_ || !avatarMap_) {
     return;
   }
