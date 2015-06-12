@@ -469,6 +469,33 @@ function onVolumeLevelsChanged(volumes) {
 
   console.log(volumes);
 
+  if (!participants_ || !avatarMap_) {
+    return;
+  }
+
+  for (var i = 0, iLen = participants_.length; i < iLen; ++i) {
+
+    var hangoutId = participants_[i].id;
+    var level = volumes[hangoutId] || 0;
+    var avatar = avatarMap_[hangoutId];
+    if (avatar && avatar.talkHandler && avatar.quietHandler) {
+      var isLocalAndMuted = hangoutId === getUserHangoutId() &&
+          isUserMicMuted();
+      var myLevel = avatar.level || 0;
+      if (isLocalAndMuted || level < myLevel) {
+        avatar.quietHandler();
+      } else if (level > myLevel) {
+        avatar.talkHandler();
+      }
+      avatar.level = level;
+    }
+  }
+}
+
+ /// Seems like this is where we can start playing around...
+function onVolumeLevelsChanged(volumes) {
+
+  console.log("JH-----------------------" + volumes);
 
   if (!participants_ || !avatarMap_) {
     return;
