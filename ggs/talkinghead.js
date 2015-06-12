@@ -72,8 +72,8 @@ function showParticipants() {
 
   for (var index in participantList) {
     var participant = participantList[index];
-    var participant[index] = 0;
-    console.log(participant.person.displayName, " is ", participant[index]);
+    var participantList[index] = 0;
+    console.log(participant.person.displayName, " is ", participantList[index]);
   }
 
 }
