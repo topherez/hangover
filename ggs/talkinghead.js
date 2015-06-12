@@ -66,6 +66,7 @@ var saveValue = null;
  */
 var removeValue = null;
 
+
 (function() {
   /**
    * Packages the parameters into a delta object for use with submitDelta.
@@ -468,6 +469,7 @@ function prepareAppDOM() {
 function onVolumeLevelsChanged(volumes) {
 
   console.log(volumes);
+  console.log(participants_);
 
   if (!participants_ || !avatarMap_) {
     return;
@@ -493,12 +495,6 @@ function onVolumeLevelsChanged(volumes) {
 
   }
 }
-
-
- /// Seems like this is where we can start playing around...
-// function countWhoIsTalking(volumes) {
-//   console.log("JH-------------", participants_[i].id, "is talking");
-// }
 
 
 /**
