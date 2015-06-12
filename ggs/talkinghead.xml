@@ -11,16 +11,50 @@
   <script type="text/javascript" src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
   
   <script type="text/javascript">
-  	var my_awesome_script = document.createElement('script');
+  	function getUrlParameters(parameter, staticURL, decode){
+  	   /*
+  	    Function: getUrlParameters
+  	    Description: Get the value of URL parameters either from 
+  	                 current URL or static URL
+  	    Author: Tirumal
+  	    URL: www.code-tricks.com
+  	   */
+  	   var currLocation = (staticURL.length)? staticURL : window.location.search,
+  	       parArr = currLocation.split("?")[1].split("&"),
+  	       returnBool = true;
+  	   
+  	   for(var i = 0; i < parArr.length; i++){
+  	        parr = parArr[i].split("=");
+  	        if(parr[0] == parameter){
+  	            return (decode) ? decodeURIComponent(parr[1]) : parr[1];
+  	            returnBool = true;
+  	        }else{
+  	            returnBool = false;            
+  	        }
+  	   }
+  	   
+  	   if(!returnBool) return false;  
+  	}
   	
-  	my_awesome_script.setAttribute('src','https://hangover.dev/ggs/talkinghead.js');
+  	var scriptHosted = 'hangover.noyoudontsuck.com/hangover/ggs/talkinghead.js';
+	var scriptLocal = 'hangover.dev/hangover/ggs/talkinghead.js';
+	
+  	var paramCheck = getUrlParameters("localtesting", "", true);
   	
-  	document.head.appendChild(my_awesome_script);
+	var my_awesome_script = document.createElement('script');
+  	
+  	if(paramCheck){
+  		console.log('<!> Using Local JS');
+	  	my_awesome_script.setAttribute('src', '//'+ scriptLocal);
+  	}else{
+  		console.log('No localtesting param found...using hosted JS');
+	  	my_awesome_script.setAttribute('src', '//'+ scriptHosted);
+  	}
+
+	document.head.appendChild(my_awesome_script);
+  	
   </script>
 	
-	
-	
-  <script type="text/javascript" src="//hangover.noyoudontsuck.com/hangover/ggs/talkinghead.js"></script>
   <link type="text/css" rel="stylesheet"href="//hangoutsapi.appspot.com/static/talkinghead/style.css" />
 
 ]]></Content>
