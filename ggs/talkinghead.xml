@@ -12,14 +12,8 @@
   
   <script type="text/javascript">
   	function getUrlParameters(parameter, staticURL, decode){
-  	   /*
-  	    Function: getUrlParameters
-  	    Description: Get the value of URL parameters either from 
-  	                 current URL or static URL
-  	    Author: Tirumal
-  	    URL: www.code-tricks.com
-  	   */
-  	   var currLocation = (staticURL.length)? staticURL : window.location.search,
+  	  
+  	   var currLocation = window.location.search,
   	       parArr = currLocation.split("?")[1].split("&"),
   	       returnBool = true;
   	   
@@ -39,13 +33,11 @@
   	var scriptHosted = 'hangover.noyoudontsuck.com/hangover/ggs/talkinghead.js';
 	var scriptLocal = 'hangover.dev/hangover/ggs/talkinghead.js';
 	
-  	var paramCheck = getUrlParameters("localtesting", "", true);
+  	var paramCheck = getUrlParameters("scriptsource", "", true);
   	
 	var my_awesome_script = document.createElement('script');
-  	
-  	console.log(paramCheck);
-  	
-  	if(paramCheck){
+  	  	
+  	if(paramCheck == 'local'){
   		console.log('<!> Using Local JS');
 	  	my_awesome_script.setAttribute('src', '//'+ scriptLocal);
   	}else{
