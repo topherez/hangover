@@ -469,8 +469,6 @@ function onVolumeLevelsChanged(volumes) {
 
   console.log(volumes);
 
-  console.log("JH-------------", participants_[i].id, "is talking");
-
   if (!participants_ || !avatarMap_) {
     return;
   }
@@ -498,11 +496,9 @@ function onVolumeLevelsChanged(volumes) {
 
 
  /// Seems like this is where we can start playing around...
-function countWhoIsTalking(volumes) {
-
-  console.log("JH-------------", participants_[i].id, "is talking");
-
-}
+// function countWhoIsTalking(volumes) {
+//   console.log("JH-------------", participants_[i].id, "is talking");
+// }
 
 
 /**
