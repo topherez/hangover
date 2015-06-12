@@ -12,7 +12,7 @@
     src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
 
   <script type="text/javascript"
-    src="//raw.githubusercontent.com/j4k3l/getting-runover/master/talkinghead/ggs/talkinghead.js"></script>
+    src="//hangover.noyoudontsuck.com/hangover/ggs/talkinghead.js"></script>
   <link type="text/css" rel="stylesheet"
     href="//hangoutsapi.appspot.com/static/talkinghead/style.css" />
 
