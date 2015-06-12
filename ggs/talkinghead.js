@@ -469,7 +469,6 @@ function onVolumeLevelsChanged(volumes) {
 
   console.log(volumes);
 
-  console.log("JH-------------", volumes);
 
   if (!participants_ || !avatarMap_) {
     return;
@@ -480,6 +479,9 @@ function onVolumeLevelsChanged(volumes) {
     var hangoutId = participants_[i].id;
     var level = volumes[hangoutId] || 0;
     var avatar = avatarMap_[hangoutId];
+
+    console.log("JH-------------", participants_[i].id, "is talking");
+
     if (avatar && avatar.talkHandler && avatar.quietHandler) {
       var isLocalAndMuted = hangoutId === getUserHangoutId() &&
           isUserMicMuted();
@@ -493,7 +495,6 @@ function onVolumeLevelsChanged(volumes) {
     }
   }
 }
-
 
 
 /**
