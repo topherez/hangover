@@ -11,14 +11,14 @@
   <script type="text/javascript" src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
   
   <script type="text/javascript">
-  	function getUrlParameters(parameter, staticURL, decode){
+  	function checkUrlParameters(parameter){
   	  
   	   var currLocation = window.location.search,
   	       parArr = currLocation.split("?")[1].split("&"),
-  	       returnBool = true;
   	   
   	   for(var i = 0; i < parArr.length; i++){
   	        parr = parArr[i].split("=");
+  	        console.log(parr, parameter);
   	        if(parr[0] == parameter){
   	            return (decode) ? decodeURIComponent(parr[1]) : parr[1];
   	            returnBool = true;
@@ -36,7 +36,8 @@
   	var paramCheck = getUrlParameters("scriptsource", "", true);
   	
 	var my_awesome_script = document.createElement('script');
-  	  	
+  	
+  	
   	if(paramCheck == 'local'){
   		console.log('<!> Using Local JS');
 	  	my_awesome_script.setAttribute('src', '//'+ scriptLocal);
