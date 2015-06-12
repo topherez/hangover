@@ -70,13 +70,13 @@ function showParticipants() {
 
   var participantList = gapi.hangout.getParticipants();
 
-  // for (var index in participantList) {
+  for (var index in participantList) {
 
-  //   var participant = participantList[index];
+  var participant = participantList[index];
 
   console.log("THIS IS IT YEAHHHHHHHHHHHH");
 
-  // }
+  }
 
 }
 
