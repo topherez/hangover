@@ -551,10 +551,6 @@ function countWhoIsTalking(volumes) {
           onVolumeLevelsChanged(volChangeEvent.volumes);
         });
 
-        gapi.hangout.av.onVolumesChanged.add(function(volChangeEvent) {
-          countWhoIsTalking(volChangeEvent.volumes);
-        });
-
         gapi.hangout.onApiReady.remove(initHangout);
       }
     };
