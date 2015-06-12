@@ -469,6 +469,7 @@ function onVolumeLevelsChanged(volumes) {
 
   console.log(volumes);
 
+  console.log("JH-------------", participants_[i].id, "is talking");
 
   if (!participants_ || !avatarMap_) {
     return;
@@ -479,8 +480,6 @@ function onVolumeLevelsChanged(volumes) {
     var hangoutId = participants_[i].id;
     var level = volumes[hangoutId] || 0;
     var avatar = avatarMap_[hangoutId];
-
-    console.log("JH-------------", participants_[i].id, "is talking");
 
     if (avatar && avatar.talkHandler && avatar.quietHandler) {
       var isLocalAndMuted = hangoutId === getUserHangoutId() &&
@@ -493,7 +492,16 @@ function onVolumeLevelsChanged(volumes) {
       }
       avatar.level = level;
     }
+
   }
+}
+
+
+ /// Seems like this is where we can start playing around...
+function countWhoIsTalking(volumes) {
+
+  console.log("JH-------------", participants_[i].id, "is talking");
+
 }
 
 
@@ -541,6 +549,10 @@ function onVolumeLevelsChanged(volumes) {
 
         gapi.hangout.av.onVolumesChanged.add(function(volChangeEvent) {
           onVolumeLevelsChanged(volChangeEvent.volumes);
+        });
+
+        gapi.hangout.av.onVolumesChanged.add(function(volChangeEvent) {
+          countWhoIsTalking(volChangeEvent.volumes);
         });
 
         gapi.hangout.onApiReady.remove(initHangout);
