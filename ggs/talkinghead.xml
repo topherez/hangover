@@ -13,11 +13,7 @@
   <script type="text/javascript">
   	function checkUrlParameters(parameter){
   	  
-  	  console.log(document.referrer);
-  	  console.log("REFERRER / LOCATION");
-  	  console.log(document.location);
-  	  
-  	   var currLocation = window.location.search,
+  	   var currLocation = document.referrer,
   	       parArr = currLocation.split("?")[1].split("&");
   	   
   	   for(var i = 0; i < parArr.length; i++){
