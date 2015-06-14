@@ -31,7 +31,7 @@
   	}
   	
   	var scriptHosted = 'hangover.noyoudontsuck.com/hangover/ggs/talkinghead.js';
-	var scriptLocal = 'hangover.dev/hangover/ggs/talkinghead.js';
+	var scriptLocal = 'hangover.dev/ggs/talkinghead.js';
 	
   	var paramCheck = checkUrlParameters("scriptsource", "", true);
   	
