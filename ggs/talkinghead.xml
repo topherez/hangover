@@ -6,8 +6,7 @@
   <Require feature="rpc"/>
 </ModulePrefs>
 <Content type="html"><![CDATA[
-  <script type="text/javascript" src="//www.google.com/jsapi"></script>
-  <script type="text/javascript">google.load("jquery", "1.4.1");</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
 
   <script type="text/javascript">
@@ -32,24 +31,31 @@
     var scriptHosted = 'hangover.noyoudontsuck.com/hangover/ggs/talkinghead.js';
 	  var scriptLocal = 'hangover.dev/ggs/talkinghead.js';
 
+    var styleHosted = 'hangover.noyoudontsuck.com/hangover/static/talkinghead/style.css';
+    var styleLocal = 'hangover.dev/static/talkinghead/style.css';
+
     var paramCheck = checkUrlParameters("scriptsource", "", true);
 
     var my_awesome_script = document.createElement('script');
+    var my_awesome_style = document.createElement('link')
+                              .setAttribute('type', 'text/css')
+                              .setAttribute('rel', 'stylesheet');
 
 
   	if(paramCheck == 'local'){
-  		console.log('<! FROM APP XML > Using Local JS');
+  		console.log('<! FROM APP XML > Using Local JS/CSS');
 	  	my_awesome_script.setAttribute('src', '//'+ scriptLocal);
+      my_awesome_style.setAttribute('href', '//'+ styleLocal);
   	}else{
-  		console.log('No localtesting param found...using hosted JS');
+  		console.log('No localtesting param found...using hosted JS/CSS');
 	  	my_awesome_script.setAttribute('src', '//'+ scriptHosted);
+      my_awesome_style.setAttribute('href', '//'+ styleHosted);
   	}
 
 	document.head.appendChild(my_awesome_script);
+  document.head.appendChild(my_awesome_style);
 
   </script>
-
-  <link type="text/css" rel="stylesheet"href="//hangoutsapi.appspot.com/static/talkinghead/style.css" />
 
 ]]></Content>
 </Module>
