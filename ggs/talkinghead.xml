@@ -37,9 +37,9 @@
     var paramCheck = checkUrlParameters("scriptsource", "", true);
 
     var my_awesome_script = document.createElement('script');
-    var my_awesome_style = document.createElement('link')
-                              .setAttribute('type', 'text/css')
-                              .setAttribute('rel', 'stylesheet');
+    var my_awesome_style = document.createElement('link');
+        my_awesome_style.setAttribute('type', 'text/css');
+        my_awesome_style.setAttribute('rel', 'stylesheet');
 
 
   	if(paramCheck == 'local'){
