@@ -9,37 +9,36 @@
   <script type="text/javascript" src="//www.google.com/jsapi"></script>
   <script type="text/javascript">google.load("jquery", "1.4.1");</script>
   <script type="text/javascript" src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
-  
+
   <script type="text/javascript">
   	function checkUrlParameters(parameter){
-  	  
+
   	   var currLocation = document.referrer,
   	       parArr = currLocation.split("?")[1].split("&");
-  	   
+
   	   for(var i = 0; i < parArr.length; i++){
   	        parr = parArr[i].split("=");
-  	        console.log(parr);
   	        if(parr[0] == parameter){
   	            return parr[1];
   	            returnBool = true;
   	        }else{
-  	            returnBool = false;            
+  	            returnBool = false;
   	        }
   	   }
-  	   
-  	   if(!returnBool) return false;  
+
+  	   if(!returnBool) return false;
   	}
-  	
-  	var scriptHosted = 'hangover.noyoudontsuck.com/hangover/ggs/talkinghead.js';
-	var scriptLocal = 'hangover.dev/ggs/talkinghead.js';
-	
-  	var paramCheck = checkUrlParameters("scriptsource", "", true);
-  	
-	var my_awesome_script = document.createElement('script');
-  	
-  	
+
+    var scriptHosted = 'hangover.noyoudontsuck.com/hangover/ggs/talkinghead.js';
+	  var scriptLocal = 'hangover.dev/ggs/talkinghead.js';
+
+    var paramCheck = checkUrlParameters("scriptsource", "", true);
+
+    var my_awesome_script = document.createElement('script');
+
+
   	if(paramCheck == 'local'){
-  		console.log('<!> Using Local JS');
+  		console.log('<! FROM APP XML > Using Local JS');
 	  	my_awesome_script.setAttribute('src', '//'+ scriptLocal);
   	}else{
   		console.log('No localtesting param found...using hosted JS');
@@ -47,9 +46,9 @@
   	}
 
 	document.head.appendChild(my_awesome_script);
-  	
+
   </script>
-	
+
   <link type="text/css" rel="stylesheet"href="//hangoutsapi.appspot.com/static/talkinghead/style.css" />
 
 ]]></Content>
